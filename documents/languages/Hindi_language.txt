@@ -1,0 +1,184 @@
+Hindi (Devanāgarī: हिन्दी, हिंदी, ISO: Hindī), or more precisely Modern Standard Hindi (Devanagari: मानक हिन्दी, ISO: Mānak Hindī), is an Indo-Aryan language spoken chiefly in the Hindi Belt region encompassing parts of northern, central, eastern, and western India. Hindi has been described as a standardised and Sanskritised register of the Hindustani language, which itself is based primarily on the Khariboli dialect of Delhi and neighbouring areas of North India. Hindi, written in the Devanagari script, is one of the two official languages of the Government of India, along with English. It is an official language in 9 states and 3 union territories and an additional official language in 3 other states. Hindi is also one of the 22 scheduled languages of the Republic of India.Hindi is the lingua franca of the Hindi Belt. It is also spoken, to a lesser extent, in other parts of India (usually in a simplified or pidginised variety such as Bazaar Hindustani or Haflong Hindi). Outside India, several other languages are recognised officially as "Hindi" but do not refer to the Standard Hindi language described here and instead descend from other dialects, such as Awadhi and Bhojpuri. Such languages include Fiji Hindi, which has an official status in Fiji, and Caribbean Hindustani, which is spoken in Trinidad and Tobago, Guyana, and Suriname. Apart from the script and formal vocabulary, standard Hindi is mutually intelligible with standard Urdu, another recognised register of Hindustani as both share a common colloquial base.As a linguistic variety, Hindi is the fourth most-spoken first language in the world, after Mandarin, Spanish and English. Hindi alongside Urdu as Hindustani is the third most-spoken language in the world, after Mandarin and English.
+
+
+== Etymology ==
+The term Hindī originally was used to refer to inhabitants of the Indo-Gangetic Plain. It was borrowed from Classical Persian  هندی Hindī (Iranian Persian pronunciation: Hendi), meaning "of or belonging to Hind (India)" (hence, "Indian").Another name Hindavī (हिन्दवी) or Hinduī (हिन्दुई) (from Persian: هندوی "of or belonging to the Hindu/Indian people") was often used in the past, for example by Amir Khusrow in his poetry.The terms "Hindi" and "Hindu" trace back to Old Persian which derived these names from the Sanskrit name Sindhu (सिन्धु ), referring to the river Indus. The Greek cognates of the same terms are "Indus" (for the river) and "India" (for the land of the river).
+
+
+== History ==
+
+
+=== Middle Indo-Aryan to Hindi ===
+Like other Indo-Aryan languages, Hindi is a direct descendant of an early form of Vedic Sanskrit, through Sauraseni Prakrit and Śauraseni Apabhraṃśa (from Sanskrit apabhraṃśa "corrupt"), which emerged in the 7th century CE.The sound changes that characterised the transition from Middle Indo-Aryan to Hindi are:
+Compensatory lengthening of vowels preceding geminate consonants, sometimes with spontaneous nasalisation: Skt. hasta "hand" > Pkt. hattha > hāth
+Loss of all word-final vowels: rātri "night" > rattī > rāt
+Formation of nasalised long vowels from nasal consonants (-VNC- > -V̄̃C-): bandha "bond" > bā̃dh
+Loss of unaccented or unstressed short vowels (reflected in schwa deletion): susthira "firm" > sutthira > suthrā
+Collapsing of adjacent vowels (including separated by a hiatus: apara "other" > avara > aur
+Final -m to -ṽ: grāma "village" > gāma > gāṽ
+Intervocalic -ḍ- to -ṛ- or -l-: taḍāga "pond" > talāv, naḍa "reed" > nal.
+v > b: vivāha "marriage" > byāh
+
+
+=== Hindustani ===
+During the period of Delhi Sultanate, which covered most of today's north India, eastern Pakistan, southern Nepal and Bangladesh and which resulted in the contact of Hindu and Muslim cultures, the Sanskrit and Prakrit base of Old Hindi became enriched with loanwords from Persian, evolving into the present form of Hindustani. The Hindustani vernacular became an expression of Indian national unity during the Indian Independence movement, and continues to be spoken as the common language of the people of the northern Indian subcontinent, which is reflected in the Hindustani vocabulary of Bollywood films and songs.
+
+
+=== Dialects ===
+Before the standardisation of Hindi on the Delhi dialect, various dialects and languages of the Hindi belt attained prominence through literary standardisation, such as Avadhi and Braj Bhasha. Early Hindi literature came about in the 12th and 13th centuries CE. This body of work included the early epics such as renditions of the Dhola Maru in the Marwari of Marwar, the Prithviraj Raso in the Braj Bhasha of Braj, and the works of Amir Khusrow in the dialect of Delhi.Modern Standard Hindi is based on the Delhi dialect, the vernacular of Delhi and the surrounding region, which came to replace earlier prestige dialects such as Awadhi and Braj. Urdu – considered another form of Hindustani – acquired linguistic prestige in the latter part of the Mughal period (1800s), and underwent significant Persian influence. Modern Hindi and its literary tradition evolved towards the end of the 18th century.John Gilchrist was principally known for his study of the Hindustani language, which was adopted as the lingua franca of northern India (including what is now present-day Pakistan) by British colonists and indigenous people. He compiled and authored An English-Hindustani Dictionary, A Grammar of the Hindoostanee Language, The Oriental Linguist, and many more. His lexicon of Hindustani was published in the Perso-Arabic script, Nāgarī script, and in Roman transliteration. He is also known for his role in the foundation of University College London and for endowing the Gilchrist Educational Trust.
+In the late 19th century, a movement to further develop Hindi as a standardised form of Hindustani separate from Urdu took form. In 1881, Bihar accepted Hindi as its sole official language, replacing Urdu, and thus became the first state of India to adopt Hindi.
+
+
+=== Independent India ===
+After independence, the government of India instituted the following conventions:
+standardisation of grammar: In 1954, the Government of India set up a committee to prepare a grammar of Hindi; The committee's report was released in 1958 as A Basic Grammar of Modern Hindi.
+standardisation of the orthography, using the Devanagari script, by the Central Hindi Directorate of the Ministry of Education and Culture to bring about uniformity in writing, to improve the shape of some Devanagari characters, and introducing diacritics to express sounds from other languages.On 14 September 1949, the Constituent Assembly of India adopted Hindi written in the Devanagari script as the official language of the Republic of India replacing Urdu's previous usage in British India. To this end, several stalwarts rallied and lobbied pan-India in favour of Hindi, most notably Beohar Rajendra Simha along with Hazari Prasad Dwivedi, Kaka Kalelkar, Maithili Sharan Gupt and Seth Govind Das who even debated in Parliament on this issue. As such, on the 50th birthday of Beohar Rajendra Simha on 14 September 1949, the efforts came to fruition following the adoption of Hindi as the official language. Now, it is celebrated as Hindi Day.
+
+
+== Official status ==
+
+
+=== India ===
+Part XVII of the Indian Constitution deals with the official language of the Indian Commonwealth. Under Article 343, the official languages of the Union have been prescribed, which includes Hindi in Devanagari script and English:
+
+(1) The official language of the Union shall be Hindi in Devanagari script. The form of numerals to be used for the official purposes of the Union shall be the international form of Indian numerals.
+(2) Notwithstanding anything in clause (1), for a period of fifteen years from the commencement of this Constitution, the English language shall continue to be used for all the official purposes of the Union for which it was being used immediately before such commencement: Provided that the President may, during the said period, by order authorise the use of the Hindi language in addition to the English language and of the Devanagari form of numerals in addition to the international form of Indian numerals for any of the official purposes of the Union.
+Article 351 of the Indian constitution states
+
+It shall be the duty of the Union to promote the spread of the Hindi language, to develop it so that it may serve as a medium of expression for all the elements of the composite culture of India and to secure its enrichment by assimilating without interfering with its genius, the forms, style and expressions used in Hindustani and in the other languages of India specified in the Eighth Schedule, and by drawing, wherever necessary or desirable, for its vocabulary, primarily on Sanskrit and secondarily on other languages.
+It was envisioned that Hindi would become the sole working language of the Union Government by 1965 (per directives in Article 344 (2) and Article 351), with state governments being free to function in the language of their own choice. However, widespread resistance to the imposition of Hindi on non-native speakers, especially in South India (such as those in Tamil Nadu) led to the passage of the Official Languages Act of 1963, which provided for the continued use of English indefinitely for all official purposes, although the constitutional directive for the Union Government to encourage the spread of Hindi was retained and has strongly influenced its policies.Article 344 (2b)  stipulates that the official language commission shall be constituted every ten years to recommend steps for progressive use of Hindi language and imposing restrictions on the use of the English language by the union government. In practice, the official language commissions are constantly endeavouring to promote Hindi but not imposing restrictions on English in official use by the union government.
+At the state level, Hindi is the official language of the following Indian states: Bihar, Chhattisgarh, Haryana, Himachal Pradesh, Jharkhand, Madhya Pradesh, Mizoram, Rajasthan, Uttar Pradesh and Uttarakhand. Hindi is an official language of Gujarat, along with Gujarati.  It acts as an additional official language of West Bengal in blocks and sub-divisions with more than 10% of the population speaking Hindi. Each may also designate a "co-official language"; in Uttar Pradesh, for instance, depending on the political formation in power, this language is generally Urdu. Similarly, Hindi is accorded the status of official language in the following Union Territories:  Delhi, Andaman and Nicobar Islands and Dadra and Nagar Haveli and Daman and Diu.
+Although there is no specification of a national language in the constitution, it is a widely held belief that Hindi is the national language of India. This is often a source of friction and contentious debate. In 2010, the Gujarat High Court clarified that Hindi is not the national language of India because the constitution does not mention it as such. In 2021, in a Narcotics Drugs and Psychotropic Substances (NDPS) Act case involving Gangam Sudhir Kumar Reddy, the Bombay High Court claimed Hindi is the national language while refusing Reddy bail, after he argued against his statutory rights being read in Hindi, despite being a native Telugu speaker. Reddy has filed a Special Leave Petition before the Supreme Court, challenging the Bombay High Court’s observation, and contended that it failed to appreciate that Hindi is not the national language in India.  In 2021, Indian food delivery company Zomato landed in controversy when a customer care executive told an app user from Tamil Nadu, “For your kind information Hindi is our national language.” Zomato responded by firing the employee, after which she was reprimanded and shortly reinstated.
+
+
+=== Fiji ===
+Outside Asia, the Awadhi language (an Eastern Hindi dialect) with influence from Bhojpuri, Bihari languages, Fijian and English is spoken in Fiji. It is an official language in Fiji as per the 1997 Constitution of Fiji, where it referred to it as "Hindustani", however in the 2013 Constitution of Fiji, it is simply called "Fiji Hindi". It is spoken by 380,000 people in Fiji.
+
+
+=== Nepal ===
+Hindi is spoken as a first language by about 77,569 people in Nepal according to the 2011 Nepal census, and further by 1,225,950 people as a second language.
+
+
+=== South Africa ===
+Hindi is a protected language in South Africa. According to the Constitution of South Africa, the Pan South African Language Board must promote and ensure respect for Hindi along with other languages.
+
+
+=== United Arab Emirates ===
+Hindi is adopted as the third official court language in the Emirate of Abu Dhabi.
+
+
+== Geographical distribution ==
+
+Hindi is the lingua franca of northern India (which contains the Hindi Belt), as well as an official language of the Government of India, along with English.In Northeast India a pidgin known as Haflong Hindi has developed as a lingua franca for the people living in Haflong, Assam who speak other languages natively. In Arunachal Pradesh, Hindi emerged as a lingua franca among locals who speak over 50 dialects natively.Hindi is quite easy to understand for many Pakistanis, who speak Urdu, which, like Hindi, is a standard register of the Hindustani language; additionally, Indian media are widely viewed in Pakistan.A sizeable population in Afghanistan, especially in Kabul, can also speak and understand Hindi-Urdu due to the popularity and influence of Bollywood films, songs and actors in the region.Hindi is also spoken by a large population of Madheshis (people having roots in north-India but having migrated to Nepal over hundreds of years) of Nepal. Apart from this, Hindi is spoken by the large Indian diaspora which hails from, or has its origin from the "Hindi Belt" of India. A substantially large North Indian diaspora lives in countries like the United States of America, the United Kingdom, the United Arab Emirates, Trinidad and Tobago, Guyana, Suriname, South Africa, Fiji and Mauritius, where it is natively spoken at home and among their own Hindustani-speaking communities. Outside India, Hindi speakers are 8 million in Nepal; 863,077 in United States of America; 450,170 in Mauritius; 380,000 in Fiji; 250,292 in South Africa; 150,000 in Suriname; 100,000 in Uganda; 45,800 in United Kingdom; 20,000 in New Zealand; 20,000 in Germany; 26,000 in Trinidad and Tobago; 3,000 in Singapore.
+
+
+== Comparison with Modern Standard Urdu ==
+
+Linguistically, Hindi and Urdu are two registers of the same language and are mutually intelligible. Both Hindi & Urdu share a core vocabulary of native Prakrit and Sanskrit-derived words. However, Hindi is written in the Devanagari script and contains more Sanskrit-derived words than Urdu, whereas Urdu is written in the Perso-Arabic script and uses more Arabic and Persian loanwords compared to Hindi. Because of this, as well as the fact that the two registers share an identical grammar, a consensus of linguists consider them to be two standardised forms of the same language, Hindustani or Hindi-Urdu. Hindi is the most commonly used official language in India. Urdu is the national language and lingua franca of Pakistan and is one of 22 official languages of India, also having official status in Uttar Pradesh, Jammu and Kashmir, Delhi and Telangana.
+
+
+== Script ==
+
+Hindi is written in the Devanagari script, an abugida. Devanagari consists of 11 vowels and 33 consonants and is written from left to right. Unlike Sanskrit, Devanagari is not entirely phonetic for Hindi, especially failing to mark schwa deletion in spoken Standard Hindi.
+
+
+=== Romanization ===
+
+The Government of India uses Hunterian transliteration as its official system of writing Hindi in the Latin script. Various other systems also exist, such as IAST, ITRANS and ISO 15919.
+
+
+== Phonology ==
+
+
+== Vocabulary ==
+
+Traditionally, Hindi words are divided into five principal categories according to their etymology:
+
+Tatsam (तत्सम "same as that") words: These are words which are spelled the same in Hindi as in Sanskrit (except for the absence of final case inflections). They include words inherited from Sanskrit via Prakrit which have survived without modification (e.g. Hindi नाम nām / Sanskrit नाम nāma, "name"; Hindi कर्म karm / Sanskrit कर्म karma, "deed, action; karma"), as well as forms borrowed directly from Sanskrit in more modern times (e.g. प्रार्थना prārthanā, "prayer"). Pronunciation, however, conforms to Hindi norms and may differ from that of classical Sanskrit. Amongst nouns, the tatsam word could be the Sanskrit non-inflected word-stem, or it could be the nominative singular form in the Sanskrit nominal declension.
+Ardhatatsam (अर्धतत्सम "semi-tatsama") words: Such words are typically earlier loanwords from Sanskrit which have undergone sound changes subsequent to being borrowed. (e.g. Hindi सूरज sūraj from Sanskrit सूर्य sūrya)
+Tadbhav (तद्भव "born of that") words: These are native Hindi words derived from Sanskrit after undergoing phonological rules (e.g. Sanskrit कर्म karma, "deed" becomes Sauraseni Prakrit कम्म kamma, and eventually Hindi काम kām, "work") and are spelled differently from Sanskrit.
+Deshaj (देशज) words: These are words that were not borrowings but do not derive from attested Indo-Aryan words either. Belonging to this category are onomatopoetic words or ones borrowed from local non-Indo-Aryan languages.
+Videshī (विदेशी "foreign") words: These include all loanwords from non-indigenous languages. The most frequent source languages in this category are Persian, Arabic, English and Portuguese. Examples are क़िला qila "fort" from Persian, कमेटी kameṭī from English committee and साबुन sābun "soap" from Arabic.Hindi also makes extensive use of loan translation (calqueing) and occasionally phono-semantic matching of English.
+
+
+=== Prakrit ===
+Hindi has naturally inherited a large portion of its vocabulary from Śaurasenī Prākṛt, in the form of tadbhava words. This process usually involves compensatory lengthening of vowels preceding consonant clusters in Prakrit, e.g. Sanskrit tīkṣṇa > Prakrit tikkha > Hindi tīkhā.
+
+
+=== Sanskrit ===
+Much of Modern Standard Hindi's vocabulary is borrowed from Sanskrit as tatsam borrowings, especially in technical and academic fields. The formal Hindi standard, from which much of the Persian, Arabic and English vocabulary has been replaced by neologisms compounding tatsam words, is called Śuddh Hindi (pure Hindi), and is viewed as a more prestigious dialect over other more colloquial forms of Hindi.
+Excessive use of tatsam words sometimes creates problems for native speakers. They may have Sanskrit consonant clusters which do not exist in native Hindi, causing difficulties in pronunciation.As a part of the process of Sanskritization, new words are coined using Sanskrit components to be used as replacements for supposedly foreign vocabulary. Usually these neologisms are calques of English words already adopted into spoken Hindi. Some terms such as dūrbhāṣ "telephone", literally "far-speech" and dūrdarśan "television", literally "far-sight" have even gained some currency in formal Hindi in the place of the English borrowings (ṭeli)fon and ṭīvī.
+
+
+=== Persian ===
+Hindi also features significant Persian influence, standardised from spoken Hindustani. Early borrowings, beginning in the mid-12th century, were specific to Islam (e.g. Muhammad, islām) and so Persian was simply an intermediary for Arabic. Later, under the Delhi Sultanate and Mughal Empire, Persian became the primary administrative language in the Hindi heartland. Persian borrowings reached a heyday in the 17th century, pervading all aspects of life. Even grammatical constructs, namely the izafat, were assimilated into Hindi.Post-Partition the Indian government advocated for a policy of Sanskritization leading to a marginalisation of the Persian element in Hindi. However, many Persian words (e.g. muśkil "difficult", bas "enough", havā "air", x(a)yāl "thought", kitab "Book", khud "Self") have remained entrenched in Modern Standard Hindi, and a larger amount are still used in Urdu poetry written in the Devanagari script.
+
+
+=== Arabic ===
+Arabic also shows influence in Hindi, often via Persian but sometimes directly.
+
+
+== Media ==
+
+
+=== Literature ===
+
+Hindi literature is broadly divided into four prominent forms or styles, being Bhakti (devotional – Kabir, Raskhan); Śṛṇgār (beauty – Keshav, Bihari); Vīgāthā (epic); and Ādhunik (modern).
+Medieval Hindi literature is marked by the influence of Bhakti movement and the composition of long, epic poems. It was primarily written in other varieties of Hindi, particularly Avadhi and Braj Bhasha, but to a degree also in Delhavi, the basis for Modern Standard Hindi. During the British Raj, Hindustani became the prestige dialect.
+Chandrakanta, written by Devaki Nandan Khatri in 1888, is considered the first authentic work of prose in modern Hindi. The person who brought realism in Hindi prose literature was Munshi Premchand, who is considered as the most revered figure in the world of Hindi fiction and progressive movement. Literary, or Sāhityik, Hindi was popularised by the writings of Swami Dayananda Saraswati, Bhartendu Harishchandra and others. The rising numbers of newspapers and magazines made Hindustani popular with educated people.The Dvivedī Yug ("Age of Dwivedi") in Hindi literature lasted from 1900 to 1918. It is named after Mahavir Prasad Dwivedi, who played a major role in establishing Modern Standard Hindi in poetry and broadening the acceptable subjects of Hindi poetry from the traditional ones of religion and romantic love.
+In the 20th century, Hindi literature saw a romantic upsurge. This is known as Chāyāvād (shadow-ism) and the literary figures belonging to this school are known as Chāyāvādī. Jaishankar Prasad, Suryakant Tripathi 'Nirala', Mahadevi Varma and Sumitranandan Pant, are the four major Chāyāvādī poets.
+Uttar Ādhunik is the post-modernist period of Hindi literature, marked by a questioning of early trends that copied the West as well as the excessive ornamentation of the Chāyāvādī movement, and by a return to simple language and natural themes.
+
+
+=== Internet ===
+Hindi literature, music, and film have all been disseminated via the internet. In 2015, Google reported a 94% increase in Hindi-content consumption year-on-year, adding that 21% of users in India prefer content in Hindi. Many Hindi newspapers also offer digital editions.
+
+
+== Sample text ==
+
+The following is a sample text in High Hindi, of Article 1 of the Universal Declaration of Human Rights (by the United Nations):
+
+Hindi in Devanagari Script
+
+अनुच्छेद 1(एक): सभी मनुष्य जन्म से स्वतंत्र और मर्यादा और अधिकारों में समान होते हैं। वे तर्क और विवेक से संपन्न हैं तथा उन्हें भ्रातृत्व की भावना से परस्पर के प्रति कार्य करना चाहिए।Transliteration (ISO)
+
+Anucchēd 1 (ēk): Sabhī manuṣya janma sē svatantra aur maryādā aur adhikārō̃ mē̃ samān hōtē haĩ. Vē tark aur vivēk sē sampanna haĩ tathā unhē̃ bhrātr̥tva kī bhāvanā sē paraspar kē pratī kārya karnā cāhiē.
+Transcription (IPA)
+
+[ənʊtːʃʰeːd eːk | səbʰiː mənʊʂjə dʒənmə seː sʋət̪ənt̪ɾə ɔːɾ məɾjaːd̪aː ɔːɾ əd̪ʰɪkaːɾõː mẽː səmaːn hoːteː hɛ̃ː‖ ʋeː t̪əɾk ɔːɾ ʋɪʋeːk seː səmpənːə hɛ̃ː t̪ətʰaː ʊnʰẽː bʰɾaːtɾɪt̪ʋə kiː bʰaːʋənaː seː pəɾəspəɾ keː pɾət̪iː kaːɾjə kəɾnaː tʃaːhɪeː‖]
+Gloss (word-to-word)
+
+Article 1 (one) – All humans birth from independent and dignity and rights equal are. They logic and conscience from endowed are and they fraternity in the spirit of each other towards work should.
+Translation (grammatical)
+
+Article 1 – All humans are born independent and equal in dignity and rights. They are endowed with logic and conscience and they should work towards each other in the spirit of fraternity.
+
+
+== See also ==
+Hindi Belt
+Bengali Language Movement (Manbhum)
+Hindi Divas – the official day to celebrate Hindi as a language.
+Languages of India
+Languages with official status in India
+Indian States by most popular languages
+List of English words of Hindi or Urdu origin
+List of Hindi channels in Europe (by type)
+List of languages by number of native speakers in India
+List of Sanskrit and Persian roots in Hindi
+World Hindi Secretariat
+
+
+== Notes ==
+
+
+== References ==
+
+
+=== Bibliography ===
+
+
+== External links ==
+
+Hindi at Curlie
+The Union: Official Language
+Official Unicode Chart for Devanagari (PDF)
