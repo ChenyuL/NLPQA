@@ -1,0 +1,243 @@
+#!/usr/bin/env python3
+
+# pip3 install sentencepiece 
+# pip3 install spacy
+# python3 -m spacy download en_core_web_sm
+# pip3 install torch
+# pip3 install transformers
+
+import sys
+import re
+import random
+import time
+import spacy
+import torch
+from typing import Any, List, Mapping, Tuple
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, AutoModelForSequenceClassification
+
+DEBUG = False
+USE_LOCAL_MODELS = False
+
+class QAEvaluator:
+    """Wrapper for a transformer model which evaluates the quality of question-answer pairs.
+    Given a QA pair, the model will generate a score. Scores can be used to rank and filter
+    QA pairs.
+
+    This class is from:
+    https://github.com/AMontgomerie/question_generator
+    """
+
+    def __init__(self) -> None:
+
+        if USE_LOCAL_MODELS:
+            QAE_PRETRAINED = "./transformers/bert-base-cased-qa-evaluator"
+        else:
+            QAE_PRETRAINED = "iarfmoose/bert-base-cased-qa-evaluator"
+        
+        self.SEQ_LENGTH = 512
+        self.device = torch.device(
+            "cuda" if torch.cuda.is_available() else "cpu")
+
+        self.qae_tokenizer = AutoTokenizer.from_pretrained(QAE_PRETRAINED)
+        self.qae_model = AutoModelForSequenceClassification.from_pretrained(
+            QAE_PRETRAINED
+        )
+        self.qae_model.to(self.device)
+        self.qae_model.eval()
+
+    def encode_qa_pairs(self, questions: List[str], answers: List[str]) -> List[torch.tensor]:
+        """Takes a list of questions and a list of answers and encodes them as a list of tensors."""
+        encoded_pairs = []
+
+        for question, answer in zip(questions, answers):
+            encoded_qa = self._encode_qa(question, answer)
+            encoded_pairs.append(encoded_qa.to(self.device))
+
+        return encoded_pairs
+
+    def get_scores(self, encoded_qa_pairs: List[torch.tensor]) -> List[float]:
+        """Generates scores for a list of encoded QA pairs."""
+        scores = {}
+
+        for i in range(len(encoded_qa_pairs)):
+            scores[i] = self._evaluate_qa(encoded_qa_pairs[i])
+
+        return [
+            k for k, v in sorted(scores.items(), key=lambda item: item[1], reverse=True)
+        ]
+
+    def _encode_qa(self, question: str, answer: str) -> torch.tensor:
+        """Concatenates a question and answer, and then tokenizes them. Returns a tensor of 
+        input ids corresponding to indices in the vocab.
+        """
+        if type(answer) is list:
+            for a in answer:
+                if a["correct"]:
+                    correct_answer = a["answer"]
+        else:
+            correct_answer = answer
+
+        return self.qae_tokenizer(
+            text=question,
+            text_pair=correct_answer,
+            padding="max_length",
+            max_length=self.SEQ_LENGTH,
+            truncation=True,
+            return_tensors="pt",
+        )
+
+    @torch.no_grad()
+    def _evaluate_qa(self, encoded_qa_pair: torch.tensor) -> float:
+        """Takes an encoded QA pair and returns a score."""
+        output = self.qae_model(**encoded_qa_pair)
+        return output[0][0][1]
+
+    
+def get_ranked_qa_pairs(
+        generated_questions: List[str], qg_answers: List[str], scores, num_questions: int = 10
+    ) -> List[Mapping[str, str]]:
+        """Ranks generated questions according to scores, and returns the top num_questions examples.
+        """
+        dprint("RANKING QUESTIONS")
+        if num_questions > len(scores):
+            num_questions = len(scores)
+            dprint((
+                f"\nWas only able to generate {num_questions} questions.",
+                "For more questions, please input a longer text.")
+            )
+
+        qa_list = []
+
+        for i in range(num_questions):
+            index = scores[i]
+            qa = {
+                "question": generated_questions[index].split("?")[0] + "?",
+                "answer": qg_answers[index]
+            }
+            qa_list.append(qa)
+
+        return qa_list
+
+
+def dprint(msg):
+    if DEBUG:
+        print(msg)
+
+
+def clean_text(t):
+    t = t.strip()
+    markupFinder = re.compile(r"\=+.+\=+", re.IGNORECASE)
+    text = markupFinder.sub("", t)
+    text = text.strip() 
+    headlineFinder = re.compile(r"\b[^.]+\n", re.IGNORECASE)
+    text = headlineFinder.sub("", t)
+    text = text.strip()
+    return text
+
+
+def generate_questions(txt_file, n):
+
+    # Load pre-trained model tokenizer (vocabulary)
+    # p208p2002/t5-squad-qg-hl
+    if USE_LOCAL_MODELS:
+        path = "./transformers/t5-squad-qg-hl"
+    else:
+        path = "p208p2002/t5-squad-qg-hl"
+    tokenizer = AutoTokenizer.from_pretrained(path, use_fast=False)
+    model = AutoModelForSeq2SeqLM.from_pretrained(path)
+    
+    NUM_QUESTIONS_TO_GEN = n
+    OVERPRODUCE_FACTOR = 1.5
+    OVERPRODUCE_NUM = int(NUM_QUESTIONS_TO_GEN * OVERPRODUCE_FACTOR)
+
+    nlp = spacy.load('en_core_web_sm')
+    text = open(txt_file).read()
+    text = clean_text(text)
+    doc = nlp(text)
+
+    # num_noun_chunks = len(list(doc.noun_chunks))
+    # dprint(f"--Number of noun chunks in doc: {num_noun_chunks}")
+
+    # num_sentences = len(list(doc.sents))
+    # dprint(f"--Number of sentences in doc: {num_sentences}")
+
+    paragraphs = text.split('\n\n')
+    dprint(f"--Number of paragraphs in doc: {len(paragraphs)}")
+    paragraphs = [p.strip() for p in paragraphs if len(p.strip()) > 3]
+
+    candidate_questions = []
+    candidate_answers = []
+
+    
+    if OVERPRODUCE_NUM < len(paragraphs):
+        questions_per_paragraph = 2
+    else:
+        questions_per_paragraph = round(OVERPRODUCE_NUM / len(paragraphs)) + 1
+    
+    dprint(f"-- Generating {questions_per_paragraph} questions per paragraph")  
+
+    #paragraphs = paragraphs[0:OVERPRODUCE_NUM]
+
+    num_generated_questions = 0
+    
+    for par in paragraphs:
+        p = nlp(par)
+        nps = random.choices(list(p.noun_chunks), k=questions_per_paragraph)
+        for np in nps:
+            t1 = time.time()
+            text_with_tokens = par[ :np.start_char] + "[HL]" + par[np.start_char: ]
+            text_with_tokens = text_with_tokens[ :np.end_char+4] + "[HL]" + text_with_tokens[np.end_char+4: ]
+            # dprint(f"\n{text_with_tokens}\n")
+            input_ids = tokenizer(text_with_tokens, return_tensors="pt", truncation=True, max_length=512).input_ids  # Batch size 1
+            outputs = model.generate(input_ids)
+            question_str = tokenizer.decode(outputs[0], skip_special_tokens=True)
+            if question_str.endswith("?") and question_str not in candidate_questions and len(question_str.split()) > 2:
+                candidate_questions.append(question_str)
+                candidate_answers.append(par)
+                num_generated_questions += 1
+                seconds = (time.time() - t1)
+                dprint(f"{question_str} ({seconds:.2f})")
+                
+            else:
+                dprint(f"--ignoring question: {question_str}")
+            
+            # stop when we have enough questions
+        dprint(f"{len(candidate_questions)} / {OVERPRODUCE_NUM}")
+        if num_generated_questions >= OVERPRODUCE_NUM:
+            break
+    
+    dprint("--FINISHED GENERATING QUESTIONS...")
+    return candidate_questions, candidate_answers
+
+
+def evaluate_questions(questions, answers, n):
+    qa_evaluator = QAEvaluator()
+    encoded_qa_pairs = qa_evaluator.encode_qa_pairs(
+                    questions, answers
+                )
+    scores = qa_evaluator.get_scores(encoded_qa_pairs)
+
+    qa_list = get_ranked_qa_pairs(questions, answers, scores, n)
+
+    for qa_pair in qa_list:
+        print(qa_pair["question"])
+    
+
+
+if __name__ == "__main__":
+
+    # ignore sterr and stdout
+    if DEBUG == False:
+        sys.stderr = open('/dev/null', 'w')
+        #sys.stdout = open('/dev/null', 'w')
+    
+    if(len(sys.argv) == 3):
+        txt_input_file = sys.argv[1]
+        q_num = int(sys.argv[2])
+        questions, answers = generate_questions(txt_input_file, q_num)
+        evaluate_questions(questions, answers, q_num)
+
+    else:
+        print("Error: This script requires two arguments: (1) textfile.txt (2) number of questions to generate")
+
+
