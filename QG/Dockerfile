@@ -18,9 +18,22 @@ RUN python3 -m spacy download en_core_web_sm
 RUN pip3 install torch
 RUN pip3 install transformers
 
+###  ########## for QA
+RUN pip3 install --upgrade pip
+RUN pip3 install git+https://github.com/deepset-ai/haystack.git#egg=farm-haystack[colab]
+
+######### for QA  ask about elasticsearch
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.9.2-linux-x86_64.tar.gz -q
+tar -xzf elasticsearch-7.9.2-linux-x86_64.tar.gz
+chown -R daemon:daemon elasticsearch-7.9.2 \
+sudo -u daemon -- elasticsearch-7.9.2/bin/elasticsearch
+
+
+
 # Add the files into container, under QA folder, modify this based on your need
 RUN mkdir /QA
 ADD ask /QA
+ADD answer /QA
 
 RUN mkdir /QA/transformers
 ADD transformers/ /QA/transformers
