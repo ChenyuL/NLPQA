@@ -17,19 +17,10 @@ RUN pip3 install spacy
 RUN python3 -m spacy download en_core_web_sm
 RUN pip3 install torch
 RUN pip3 install transformers
-RUN pip3 install --user -U nltk
-###  ########## for QA
-RUN pip3 install --upgrade pip
-RUN pip3 install git+https://github.com/deepset-ai/haystack.git#egg=farm-haystack[colab]
-
-######### for QA  ask about elasticsearch
-
-
 
 # Add the files into container, under QA folder, modify this based on your need
 RUN mkdir /QA
 ADD ask /QA
-ADD answer /QA
 
 RUN mkdir /QA/transformers
 ADD transformers/ /QA/transformers

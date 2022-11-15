@@ -9,6 +9,7 @@ apt-get -y upgrade
 # The following line ensures that the subsequent install doesn't expect user input
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get -y install python3-pip python3-dev
+RUN apt-get -y install git
 
 # Install dependencies
 RUN pip3 install --upgrade pip
@@ -18,11 +19,10 @@ RUN python3 -m spacy download en_core_web_sm
 
 RUN pip3 install --user -U nltk
 RUN pip3 install --upgrade pip
-RUN pip3 install git+https://github.com/deepset-ai/haystack.git#egg=farm-haystack[colab]
+RUN pip3 install git+https://github.com/deepset-ai/haystack.git#egg=farm-haystack
 
 # Add the files into container, under QA folder, modify this based on your need
 RUN mkdir /QA
-ADD ask /QA
 ADD answer /QA
 
 RUN mkdir /QA/saveDocs

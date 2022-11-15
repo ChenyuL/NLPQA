@@ -1,4 +1,9 @@
-### macOS ###
+# Project specific
+
+QA/transformers/*
+
+
+### macOS ###c
 # General
 .DS_Store
 .AppleDouble
