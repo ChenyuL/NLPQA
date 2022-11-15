@@ -20,11 +20,7 @@ from haystack.nodes import FARMReader
 from haystack.pipelines import ExtractiveQAPipeline
 from nltk.corpus import wordnet
 import spacy
-
-#
-# wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.9.2-linux-x86_64.tar.gz -q
-# tar -xzf elasticsearch-7.9.2-linux-x86_64.tar.gz
-# chown -R daemon:daemon elasticsearch-7.9.2
+# import en_core_web_sm
 
 DEBUG = False
 USE_LOCAL_MODELS = False
@@ -75,6 +71,7 @@ def isYesNoQuestion(question):
 
 def answerWHQuestion(question,file):
 
+<<<<<<< Updated upstream
     logging.basicConfig(format="%(levelname)s - %(name)s -  %(message)s", level=logging.WARNING)
     logging.getLogger("haystack").setLevel(logging.INFO)
     launch_es()
@@ -92,6 +89,11 @@ def answerWHQuestion(question,file):
     document_store.write_documents(file)
     #
     # retriever = BM25Retriever(document_store=document_store)
+=======
+    
+    #### set document folder
+    docs = convert_files_to_docs(dir_path=filePath, clean_func=clean_wiki_text, split_paragraphs=False)
+>>>>>>> Stashed changes
 
     reader = FARMReader(model_name_or_path="deepset/roberta-base-squad2", use_gpu=True)
 
@@ -110,6 +112,7 @@ def answerWHQuestion(question,file):
 
 def answerYesNoQuestion(question,file):
 
+<<<<<<< Updated upstream
     logging.basicConfig(format="%(levelname)s - %(name)s -  %(message)s", level=logging.WARNING)
     logging.getLogger("haystack").setLevel(logging.INFO)
     launch_es()
@@ -124,6 +127,10 @@ def answerYesNoQuestion(question,file):
     document_store.write_documents(docs)
 
     retriever = BM25Retriever(document_store = document_store)
+=======
+    docs = convert_files_to_docs(dir_path=file, clean_func=clean_wiki_text, split_paragraphs=False)
+    # retriever = BM25Retriever(document_store = document_store)
+>>>>>>> Stashed changes
     reader = FARMReader(model_name_or_path = "deepset/roberta-base-squad2", use_gpu=True)
     pipe = ExtractiveQAPipeline(reader, retriever)
 
