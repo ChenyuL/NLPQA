@@ -155,8 +155,10 @@ if __name__ == "__main__":
             # print("A2 ", answers[2])
             # print("A3 ", answers[3])
             for i in range(len(answers)): # ask professor how many questions will be asked ?
-                print("A{}".format(i), answers[i])
+                # print("A{}".format(i), answers[i])
+                print(answers[i])
     except:
+
         print("Error: This script requires two arguments: (1) article.txt (2) question.txt ")
 
 
