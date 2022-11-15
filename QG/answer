@@ -6,18 +6,16 @@
 # pip3 install torch
 # pip3 install transformers
 # pip3 pip3 install --upgrade pip
-# pip3 install git+https://github.com/deepset-ai/haystack.git#egg=farm-haystack[colab]
+# ! pip3 install git+https://github.com/deepset-ai/haystack.git#egg=farm-haystack[colab]
 
 import logging
 import sys
-from haystack.utils import launch_es
+
+print(sys.argv[0])
 import time
 import os
-from haystack.document_stores import ElasticsearchDocumentStore
-from haystack.utils import clean_wiki_text, convert_files_to_docs, fetch_archive_from_http
-from haystack.nodes import BM25Retriever
+from haystack.utils import clean_wiki_text, convert_files_to_docs
 from haystack.nodes import FARMReader
-from haystack.pipelines import ExtractiveQAPipeline
 from nltk.corpus import wordnet
 import spacy
 
@@ -26,7 +24,7 @@ import spacy
 # tar -xzf elasticsearch-7.9.2-linux-x86_64.tar.gz
 # chown -R daemon:daemon elasticsearch-7.9.2
 
-DEBUG = False
+DEBUG = True
 USE_LOCAL_MODELS = False
 ######## get semantic negation for similarity calculation
 def Negation(sentence):
@@ -71,38 +69,39 @@ def isYesNoQuestion(question):
                 "has","have","hasn't", "haven't","had",
                 "can","could","will","would","may","might","shall","must","should"] # reference https://englishstudypage.com/grammar/yesno-questions/
     result = s.startswith(tuple(prefixes))
+    print(result)
     return result
 
 def answerWHQuestion(question,file):
 
     logging.basicConfig(format="%(levelname)s - %(name)s -  %(message)s", level=logging.WARNING)
     logging.getLogger("haystack").setLevel(logging.INFO)
-    launch_es()
-    time.sleep(30)
-    # Get the host where Elasticsearch is running, default to localhost
-    host = os.environ.get("ELASTICSEARCH_HOST", "localhost")
-    document_store = ElasticsearchDocumentStore(host=host, username="", password="", index="document")
+
 
     #### set document folder
 
     ###### test
     # keep data as the document file
-    doc_dir = str("./data/")
+    # create a new directory called article_directory
+    # put all the articles in the article_directory
+    os.mkdir('article_directory')
 
-    docs = convert_files_to_docs(dir_path=doc_dir, clean_func=clean_wiki_text, split_paragraphs=False)
-    document_store.write_documents(docs)
+    # add the argv[1] to the article_directory
+    os.system('cp ' + file + ' article_directory')
+ 
 
-    retriever = BM25Retriever(document_store=document_store)
-
+    docs = convert_files_to_docs(dir_path=article_directory, clean_func=clean_wiki_text, split_paragraphs=False)
+    
     reader = FARMReader(model_name_or_path="deepset/roberta-base-squad2", use_gpu=True)
 
-    pipe = ExtractiveQAPipeline(reader, retriever)
+    prediction = reader.predict(
+    query=question,
+    documents=docs,
+    top_k=1)
+
+    print("Answer:", prediction["answers"][0]["answer"])
 
 
-    prediction = pipe.run(
-        query=question,
-        params={"Retriever": {"top_k": 1}, "Reader": {"top_k": 1}}
-    )
     answer = prediction['answers'][0].to_dict()['answer']
     # print(answer)
     return answer
@@ -110,28 +109,30 @@ def answerWHQuestion(question,file):
 
 
 def answerYesNoQuestion(question,file):
+    print(question)
+    print(file)
 
     logging.basicConfig(format="%(levelname)s - %(name)s -  %(message)s", level=logging.WARNING)
     logging.getLogger("haystack").setLevel(logging.INFO)
-    launch_es()
-    time.sleep(30)
-    # Get the host where Elasticsearch is running, default to localhost
-    host = os.environ.get("ELASTICSEARCH_HOST", "localhost")
-    document_store = ElasticsearchDocumentStore(host=host, username="", password="", index="document")
+
 
     #### set document folder
-    doc_dir = str("./data/"+file)
-    docs = convert_files_to_docs(dir_path=doc_dir, clean_func=clean_wiki_text, split_paragraphs=False)
-    document_store.write_documents(docs)
+    os.mkdir('article_directory')
 
-    retriever = BM25Retriever(document_store = document_store)
+    # add the argv[1] to the article_directory
+    os.system('cp ' + file + ' article_directory')
+ 
+
+    docs = convert_files_to_docs(dir_path=article_directory, clean_func=clean_wiki_text, split_paragraphs=True)
+
+    print(docs)
+
     reader = FARMReader(model_name_or_path = "deepset/roberta-base-squad2", use_gpu=True)
-    pipe = ExtractiveQAPipeline(reader, retriever)
-
-    prediction = pipe.run(
-        query=question,
-        params={"Retriever": {"top_k": 1}, "Reader": {"top_k": 1}}
-    )
+    
+    prediction = reader.predict(
+    query=question,
+    documents=docs,
+    top_k=1)
 
     nlp = spacy.load('en_core_web_sm')
     queryTokens = nlp(question)
@@ -166,22 +167,32 @@ if __name__ == "__main__":
 
     try:
         txt_input_file = sys.argv[1]
+        print('try')
+        print(txt_input_file)
+        
+        with open(txt_input_file, 'r') as filePath:
+            files = filePath.readlines()
+        # print(files)   # here assume we are given filePath,  ask do we need to generate .txt files from these path.
+
+        print('trying to test_qs')
         questionFile = sys.argv[2]
-        with open(txt_input_file) as filePath:
-            files = filePath.readlines()   # here assume we are given filePath,  ask do we need to generate .txt files from these path.
+        print(questionFile)
 
-
-        file = "set1" # example  we need to ask if  questions in questions.txt from one article.txt
-        with open(questionFile) as f:
+ # example  we need to ask if  questions in questions.txt from one article.txt
+        with open(questionFile, 'r') as f:
             questions = f.readlines()
+            print(questions)
             cnt = 1
             answers = []
             for i in range(len(questions)):
-                if isYesNoQuestion(questions[i]) :
-                    answer = answerYesNoQuestion(questions[i],file)###
+                print(questions[i])
+                if isYesNoQuestion(questions[i]) == True:
+                    print('returned true')
+                    answer = answerYesNoQuestion(questions[i],txt_input_file)
+                    print(answer)
                     answers.append(answer)
                 else:
-                    answer = answerWHQuestion(questions[i],file)  ### need to edit file folder here, file is a folder contains .txt files
+                    answer = answerWHQuestion(questions[i],txt_input_file)  ### need to edit file folder here, file is a folder contains .txt files
                     answers.append(answer)
 
     ############## get the output format #################
