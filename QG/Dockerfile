@@ -23,10 +23,6 @@ RUN pip3 install --upgrade pip
 RUN pip3 install git+https://github.com/deepset-ai/haystack.git#egg=farm-haystack[colab]
 
 ######### for QA  ask about elasticsearch
-wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.9.2-linux-x86_64.tar.gz -q
-tar -xzf elasticsearch-7.9.2-linux-x86_64.tar.gz
-chown -R daemon:daemon elasticsearch-7.9.2 \
-sudo -u daemon -- elasticsearch-7.9.2/bin/elasticsearch
 
 
 
