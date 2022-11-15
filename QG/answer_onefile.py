@@ -138,42 +138,42 @@ def answerYesNoQuestion(question,file):
 if __name__ == "__main__":
 
     # ignore sterr and stdout
-    # if DEBUG == False:
-    #     sys.stderr = open('/dev/null', 'w')
-    # try:
-    # if (len(sys.argv) == 2):
-    txt_input_file = sys.argv[1]
-    print(txt_input_file)
-    questionFile = sys.argv[2]
-    if (os.path.exists('saveDocs')==True):
-        shutil.rmtree('saveDocs')
-        os.mkdir('saveDocs')
-    else:
-        os.mkdir('saveDocs')
+    if DEBUG == False:
+        sys.stderr = open('/dev/null', 'w')
+    try:
+        # if (len(sys.argv) == 2):
+        txt_input_file = sys.argv[1]
+        print(txt_input_file)
+        questionFile = sys.argv[2]
+        if (os.path.exists('saveDocs')==True):
+            shutil.rmtree('saveDocs')
+            os.mkdir('saveDocs')
+        else:
+            os.mkdir('saveDocs')
 
-    shutil.copy(txt_input_file, 'saveDocs')
-    filePath = str("./saveDocs")
+        shutil.copy(txt_input_file, 'saveDocs')
+        filePath = str("./saveDocs")
 
-    with open(questionFile) as f:
-        questions = f.readlines()
-        cnt = 1
-        answers = []
-        for i in range(len(questions)):
-            if isYesNoQuestion(questions[i]) :
-                answer = answerYesNoQuestion(questions[i],filePath)###
-                answers.append(answer)
-            else:
-                answer = answerWHQuestion(questions[i],filePath)  ### need to edit file folder here, file is a folder contains .txt files
-                answers.append(answer)
+        with open(questionFile) as f:
+            questions = f.readlines()
+            cnt = 1
+            answers = []
+            for i in range(len(questions)):
+                if isYesNoQuestion(questions[i]) :
+                    answer = answerYesNoQuestion(questions[i],filePath)###
+                    answers.append(answer)
+                else:
+                    answer = answerWHQuestion(questions[i],filePath)  ### need to edit file folder here, file is a folder contains .txt files
+                    answers.append(answer)
 
-############## get the output format #################
-        print("***************************")
-        # print("A1 ", answers[1])
-        # print("A2 ", answers[2])
-        # print("A3 ", answers[3])
-        for i in range(len(answers)): # ask professor how many questions will be asked ?
-            print("A{}".format(i), answers[i])
-    # except:
-    #     print("Error: This script requires two arguments: (1) article.txt (2) question.txt ")
-    #
+    ############## get the output format #################
+            print("***************************")
+            # print("A1 ", answers[1])
+            # print("A2 ", answers[2])
+            # print("A3 ", answers[3])
+            for i in range(len(answers)): # ask professor how many questions will be asked ?
+                print("A{}".format(i), answers[i])
+    except:
+        print("Error: This script requires two arguments: (1) article.txt (2) question.txt ")
+
 
