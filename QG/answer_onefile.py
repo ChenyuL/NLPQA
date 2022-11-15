@@ -18,9 +18,9 @@ import shutil
 
 
 from haystack.utils import convert_files_to_docs ,clean_wiki_text
-from haystack.nodes import BM25Retriever
+
 from haystack.nodes import FARMReader
-from haystack.pipelines import ExtractiveQAPipeline
+
 from nltk.corpus import wordnet
 import spacy
 
