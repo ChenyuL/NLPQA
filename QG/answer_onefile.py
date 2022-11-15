@@ -85,18 +85,17 @@ def answerWHQuestion(question,file):
 
     #### set document folder
 
-    ###### test
-    # keep data as the document file
-    doc_dir = str("./data/")
-
-    docs = convert_files_to_docs(dir_path=doc_dir, clean_func=clean_wiki_text, split_paragraphs=False)
-    document_store.write_documents(docs)
-
-    retriever = BM25Retriever(document_store=document_store)
+    # ###### test
+    # doc_dir = str("./data/"+file)
+    #
+    # docs = convert_files_to_docs(dir_path=doc_dir, clean_func=clean_wiki_text, split_paragraphs=False)
+    document_store.write_documents(file)
+    #
+    # retriever = BM25Retriever(document_store=document_store)
 
     reader = FARMReader(model_name_or_path="deepset/roberta-base-squad2", use_gpu=True)
 
-    pipe = ExtractiveQAPipeline(reader, retriever)
+    pipe = ExtractiveQAPipeline(reader)
 
 
     prediction = pipe.run(
@@ -151,7 +150,7 @@ def answerYesNoQuestion(question,file):
 
     QAsimilarity = queryTokens.similarity(answerTokens)  # need to test the QAsimilarity constrain, current useless
 
-    if ((score >= 0.5) ==True) & ((QAsimilarityNegate >0.15) == True):  ## 0.15 from experiment
+    if (score >= 0.5 is True) & (QAsimilarityNegate > 0.15 is True):  ## 0.15 from experiment
         answerYN = "Yes"
     else:
         answerYN = "No"
@@ -164,7 +163,7 @@ if __name__ == "__main__":
     if DEBUG == False:
         sys.stderr = open('/dev/null', 'w')
 
-    try:
+    if (len(sys.argv) == 2):
         txt_input_file = sys.argv[1]
         questionFile = sys.argv[2]
         with open(txt_input_file) as filePath:
@@ -191,9 +190,7 @@ if __name__ == "__main__":
             # print("A3 ", answers[3])
             for i in range(len(answers)): # ask professor how many questions will be asked ?
                 print("A{}".format(i), answers[i])
-    except:
+    else:
         print("Error: This script requires two arguments: (1) textfile.txt (2) number of questions to generate")
 
 
-
-#### code for test the system: python3 QG/answer.py QG/data/pikachu_pokemon.txt test_questions.txt
