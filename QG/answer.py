@@ -88,7 +88,6 @@ def answerWHQuestion(question,file):
     docs = convert_files_to_docs(dir_path=doc_dir, clean_func=clean_wiki_text, split_paragraphs=False)
     document_store.write_documents(docs)
 
-
     retriever = BM25Retriever(document_store=document_store)
     reader = FARMReader(model_name_or_path="deepset/roberta-base-squad2", use_gpu=True)
     pipe = ExtractiveQAPipeline(reader, retriever)
@@ -118,8 +117,8 @@ def answerYesNoQuestion(question,file):
     docs = convert_files_to_docs(dir_path=doc_dir, clean_func=clean_wiki_text, split_paragraphs=False)
     document_store.write_documents(docs)
 
-    retriever = BM25Retriever(document_store=document_store)
-    reader = FARMReader(model_name_or_path="deepset/roberta-base-squad2", use_gpu=True)
+    retriever = BM25Retriever(document_store = document_store)
+    reader = FARMReader(model_name_or_path = "deepset/roberta-base-squad2", use_gpu=True)
     pipe = ExtractiveQAPipeline(reader, retriever)
 
     prediction = pipe.run(
@@ -158,7 +157,6 @@ if __name__ == "__main__":
     if DEBUG == False:
         sys.stderr = open('/dev/null', 'w')
 
-
     if (len(sys.argv) == 2):
         txt_input_file = sys.argv[1]
         questionFile = sys.argv[2]
@@ -166,14 +164,14 @@ if __name__ == "__main__":
             files = filePath.readlines()   # here assume we are given filePath,  ask do we need to generate .txt files from these path.
 
 
-        file = "set1" # example 
+        file = "set1" # example  we need to ask if  questions in questions.txt from one article.txt
         with open(questionFile) as f:
             questions = f.readlines()
             cnt = 1
             answers = []
             for i in range(len(questions)):
                 if isYesNoQuestion(questions[i]) :
-                    answer = answerYesNoQuestion(questions[i])###
+                    answer = answerYesNoQuestion(questions[i],file)###
                     answers.append(answer)
                 else:
                     answer = answerWHQuestion(questions[i],file)  ### need to edit file folder here, file is a folder contains .txt files
