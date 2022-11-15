@@ -13,11 +13,12 @@ import sys
 from haystack.utils import launch_es
 import time
 import os
-from haystack.document_stores import ElasticsearchDocumentStore
-from haystack.utils import clean_wiki_text, convert_files_to_docs, fetch_archive_from_http
+
+from haystack.utils import convert_files_to_docs
 from haystack.nodes import BM25Retriever
 from haystack.nodes import FARMReader
 from haystack.pipelines import ExtractiveQAPipeline
+
 from nltk.corpus import wordnet
 import spacy
 
