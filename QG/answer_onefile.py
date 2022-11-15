@@ -12,15 +12,10 @@ import logging
 import sys
 from haystack.utils import launch_es
 import time
-
 import os
 import shutil
-
-
 from haystack.utils import convert_files_to_docs ,clean_wiki_text
-
 from haystack.nodes import FARMReader
-
 from nltk.corpus import wordnet
 import spacy
 
@@ -78,8 +73,6 @@ def isYesNoQuestion(question):
 
 def answerWHQuestion(question,file):
 
-    launch_es()
-    time.sleep(30)
     #### set document folder
 
     docs = convert_files_to_docs(dir_path=filePath, clean_func=clean_wiki_text, split_paragraphs=False)
@@ -99,8 +92,7 @@ def answerWHQuestion(question,file):
 
 
 def answerYesNoQuestion(question,file):
-    launch_es()
-    time.sleep(30)
+
     docs = convert_files_to_docs(dir_path=file, clean_func=clean_wiki_text, split_paragraphs=False)
     # retriever = BM25Retriever(document_store = document_store)
     reader = FARMReader(model_name_or_path = "deepset/roberta-base-squad2", use_gpu=True)
