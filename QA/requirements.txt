@@ -1,1 +1,1 @@
--e git://github.com/deepset-ai/haystack.git@master#egg=farm-haystack
+# -e git://github.com/deepset-ai/haystack.git#egg=farm-haystack[all]

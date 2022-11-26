@@ -5,15 +5,12 @@ import logging
 import sys
 import os
 import shutil
-from haystack.utils import convert_files_to_docs ,clean_wiki_text
+from haystack.utils import convert_files_to_docs, clean_wiki_text
 from haystack.nodes import FARMReader
 from nltk.corpus import wordnet
 import spacy
 
-#
-# wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.9.2-linux-x86_64.tar.gz -q
-# tar -xzf elasticsearch-7.9.2-linux-x86_64.tar.gz
-# chown -R daemon:daemon elasticsearch-7.9.2
+
 
 DEBUG = False
 USE_LOCAL_MODELS = False
