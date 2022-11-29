@@ -7,8 +7,8 @@ answer_onefile.py
 
 to run it  
 ```
-cd QG   
-python answer_onefile.py ./data/pikachu_pokemon.txt test_questions.txt    
+cd QA   
+python answer ./data/pikachu_pokemon.txt test_questions.txt    
 ```
  ./data/pikachu_pokemon.txt is the article.txt file  
 
