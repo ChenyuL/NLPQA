@@ -15,6 +15,7 @@ import torch
 from typing import Any, List, Mapping, Tuple
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, AutoModelForSequenceClassification
 
+#Must change to False before submission
 DEBUG = False
 USE_LOCAL_MODELS = False
 

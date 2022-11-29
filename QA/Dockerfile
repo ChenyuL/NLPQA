@@ -19,13 +19,22 @@ RUN pip3 install spacy
 RUN python3 -m spacy download en_core_web_sm
 RUN pip3 install protobuf==3.20.1
 
+# For QG code only
+RUN pip3 install sentencepiece 
+RUN pip3 install torch
+RUN pip3 install transformers
+
 # Haystack for QA
 RUN pip3 install farm-haystack
 
 # Add the files into container, under QA folder, modify this based on your need
 RUN mkdir /QA
-ADD answer /QA
 
+ADD ask /QA
+RUN mkdir /QA/transformers
+ADD transformers/ /QA/transformers
+
+ADD answer /QA
 RUN mkdir /QA/saveDocs
 
 CMD ["chmod 777 /QA/*"]
