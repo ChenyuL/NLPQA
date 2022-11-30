@@ -8,6 +8,7 @@
 
 import sys
 import re
+import subprocess
 import random
 import time
 import spacy
@@ -18,6 +19,11 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, AutoModelForSeque
 #Must change to False before submission
 DEBUG = False
 USE_LOCAL_MODELS = False
+def checkEnvironment():
+    subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'torch>=1.10.2'])
+    subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'transformers>=4.21.2'])
+    return
+
 
 class QAEvaluator:
     """Wrapper for a transformer model which evaluates the quality of question-answer pairs.
@@ -140,6 +146,7 @@ def generate_questions(txt_file, n):
 
     # Load pre-trained model tokenizer (vocabulary)
     # p208p2002/t5-squad-qg-hl
+
     if USE_LOCAL_MODELS:
         path = "./transformers/t5-squad-qg-hl"
     else:
@@ -155,6 +162,7 @@ def generate_questions(txt_file, n):
     text = open(txt_file).read()
     text = clean_text(text)
     doc = nlp(text)
+    print("doc test", doc)
 
     # num_noun_chunks = len(list(doc.noun_chunks))
     # dprint(f"--Number of noun chunks in doc: {num_noun_chunks}")
@@ -227,6 +235,10 @@ def evaluate_questions(questions, answers, n):
 
 if __name__ == "__main__":
 
+    try:
+        checkEnvironment()
+    except:
+        print("environment Error, please check")
     # ignore sterr and stdout
     if DEBUG == False:
         sys.stderr = open('/dev/null', 'w')

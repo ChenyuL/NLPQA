@@ -4,6 +4,7 @@
 import logging
 import sys
 import os
+import subprocess
 import shutil
 from haystack.utils import convert_files_to_docs, clean_wiki_text
 from haystack.nodes import FARMReader
@@ -11,9 +12,15 @@ from nltk.corpus import wordnet
 import spacy
 
 
-
 DEBUG = False
 USE_LOCAL_MODELS = False
+### Check the current environment has all packages we need
+def checkEnvironment():
+    subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'spaCy==3.4'])
+    subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'nltk==3.7'])
+    subprocess.check_call([sys.executable, '-m', 'pip', 'install',  'farm-haystack==1.10.0'])
+    return
+
 ######## get semantic negation for similarity calculation
 def Negation(sentence):
   '''
@@ -118,8 +125,14 @@ def answerYesNoQuestion(question,file):
 if __name__ == "__main__":
 
     # ignore sterr and stdout
+    try:
+        checkEnvironment()
+    except:
+        print("environment Error, please check")
+
     if DEBUG == False:
         sys.stderr = open('/dev/null', 'w')
+
     try:
         # if (len(sys.argv) == 2):
         txt_input_file = sys.argv[1]
@@ -141,6 +154,7 @@ if __name__ == "__main__":
             for i in range(len(questions)):
                 if isYesNoQuestion(questions[i]) :
                     answer = answerYesNoQuestion(questions[i],filePath)###
+                    # print("test answer", answer)
                     answers.append(answer)
                 else:
                     answer = answerWHQuestion(questions[i],filePath)  ### need to edit file folder here, file is a folder contains .txt files
