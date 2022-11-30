@@ -10,15 +10,16 @@ from haystack.utils import convert_files_to_docs, clean_wiki_text
 from haystack.nodes import FARMReader
 from nltk.corpus import wordnet
 import spacy
-
+import warnings
+warnings.filterwarnings("ignore")
 
 DEBUG = False
 USE_LOCAL_MODELS = False
 ### Check the current environment has all packages we need
 def checkEnvironment():
-    subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'spaCy==3.4'])
-    subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'nltk==3.7'])
-    subprocess.check_call([sys.executable, '-m', 'pip', 'install',  'farm-haystack==1.10.0'])
+    subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'spaCy==3.4'], stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
+    subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'nltk==3.7'], stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
+    subprocess.check_call([sys.executable, '-m', 'pip', 'install',  'farm-haystack==1.10.0'], stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
     return
 
 ######## get semantic negation for similarity calculation

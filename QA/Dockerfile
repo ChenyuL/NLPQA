@@ -25,7 +25,7 @@ RUN pip3 install torch
 RUN pip3 install transformers
 
 # Haystack for QA
-RUN pip3 install farm-haystack
+RUN pip3 install farm-haystack==1.10.0
 
 # Add the files into container, under QA folder, modify this based on your need
 RUN mkdir /QA
