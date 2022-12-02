@@ -13,19 +13,23 @@ RUN apt-get -y update && \
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get -y install python3-pip python3-dev
 
-# Install spaCy
+# requirements file
+COPY requirements.txt requirements.txt
 RUN pip3 install --upgrade pip
-RUN pip3 install spacy
-RUN python3 -m spacy download en_core_web_sm
-RUN pip3 install protobuf==3.20.1
+RUN pip3 install -r requirements.txt
+# Install spaCy
+
+#RUN pip3 install spacy
+#RUN python3 -m spacy download en_core_web_sm
+#RUN pip3 install protobuf==3.20.1
 
 # For QG code only
-RUN pip3 install sentencepiece 
-RUN pip3 install torch
-RUN pip3 install transformers
+#RUN pip3 install sentencepiece 
+#RUN pip3 install torch
+#RUN pip3 install transformers
 
 # Haystack for QA
-RUN pip3 install farm-haystack==1.10.0
+#RUN pip3 install farm-haystack==1.10.0
 
 # Add the files into container, under QA folder, modify this based on your need
 RUN mkdir /QA

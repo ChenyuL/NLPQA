@@ -13,9 +13,12 @@ import spacy
 import warnings
 warnings.filterwarnings("ignore")
 
-DEBUG = False
-USE_LOCAL_MODELS = False
+DEBUG = True
+USE_LOCAL_MODELS = True
 ### Check the current environment has all packages we need
+import os
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+
 def checkEnvironment():
     subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'spaCy==3.4'], stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
     subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'nltk==3.7'], stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL)
@@ -153,12 +156,14 @@ if __name__ == "__main__":
             cnt = 1
             answers = []
             for i in range(len(questions)):
+
                 if isYesNoQuestion(questions[i]) :
                     answer = answerYesNoQuestion(questions[i],filePath)###
                     # print("test answer", answer)
                     answers.append(answer)
                 else:
                     answer = answerWHQuestion(questions[i],filePath)  ### need to edit file folder here, file is a folder contains .txt files
+                    # print("test answer", answer)
                     answers.append(answer)
 
     ############## get the output format #################

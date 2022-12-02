@@ -1,1 +1,8 @@
-# -e git://github.com/deepset-ai/haystack.git#egg=farm-haystack[all]
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz
+protobuf==3.20.1
+farm-haystack==1.10.0
+spaCy==3.4
+nltk==3.7
+torch>=1.10.2
+transformers>=4.21.2
+sentencepiece==0.1.97
